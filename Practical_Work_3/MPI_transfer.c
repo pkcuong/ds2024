@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     if (rank == 0) {
         int server_rank = 1;
 
-        file = fopen("server.txt", "r");
+        file = fopen("test.txt", "r");
         if (file == NULL) {
             printf("[-] Error opening the file.\n");
             MPI_Finalize();
@@ -48,12 +48,12 @@ int main(int argc, char *argv[]) {
 
         MPI_Recv(buffer, count, MPI_CHAR, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
-        file = fopen("client.txt", "w");
+        file = fopen("received_file.txt", "w");
 
         fwrite(buffer, 1, count, file);
         fclose(file);
 
-        printf("[Server] Data received and written to 'client.txt' successfully.\n");
+        printf("[Server] Data received and written to 'received_file.txt' successfully.\n");
     }
 
     MPI_Finalize();
