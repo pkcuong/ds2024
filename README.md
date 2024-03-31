@@ -11,4 +11,4 @@ Student Info
 
 * Student Name: Phạm Khương Cường
 * Student ID: BI12-070
-* Student Group ID: Not-for-now
+* Student Group ID: 8
